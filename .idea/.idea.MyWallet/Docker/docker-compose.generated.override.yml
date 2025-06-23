@@ -4,19 +4,19 @@ services:
   stock:
     build:
       context: "/Users/AndreTrindade/Documents/Old_lapTop/Programacao/WorkSpace/my-wallet"
-      dockerfile: "Services/StockService/StockService.Api/Dockerfile"
+      dockerfile: "Services/CatalogService/CatalogService.Api/Dockerfile"
       target: "base"
     command: []
     entrypoint:
     - "dotnet"
-    - "/app/bin/Debug/net8.0/StockService.Api.dll"
+    - "/app/bin/Debug/net8.0/CatalogService.Api.dll"
     environment:
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
     image: "stock:dev"
     ports: []
     volumes:
     - "/Users/AndreTrindade/.nuget/packages:/root/.nuget/packages"
-    - "/Users/AndreTrindade/Documents/Old_lapTop/Programacao/WorkSpace/my-wallet/Services/StockService/StockService.Api:/app:rw"
+    - "/Users/AndreTrindade/Documents/Old_lapTop/Programacao/WorkSpace/my-wallet/Services/CatalogService/CatalogService.Api:/app:rw"
     - "/Users/AndreTrindade/Documents/Old_lapTop/Programacao/WorkSpace/my-wallet:/src:rw"
     working_dir: "/app"
   wallet:

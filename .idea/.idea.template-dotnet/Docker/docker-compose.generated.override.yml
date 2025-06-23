@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.9"
+services:
+  wallet:
+    build:
+      context: "/Users/AndreTrindade/Documents/Old_lapTop/programas/BookShop"
+      dockerfile: "Services/WalletService/WalletService.Api/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/WalletService.Api.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "wallet:dev"
+    ports: []
+    volumes:
+    - "/Users/AndreTrindade/.nuget/packages:/root/.nuget/packages"
+    - "/Users/AndreTrindade/Documents/Old_lapTop/programas/BookShop/Services/WalletService/WalletService.Api:/app:rw"
+    - "/Users/AndreTrindade/Documents/Old_lapTop/programas/BookShop:/src:rw"
+    working_dir: "/app"
